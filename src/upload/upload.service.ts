@@ -11,12 +11,10 @@ export class UploadService {
     private upload: any;
 
     constructor(configService: ConfigService) {
-        console.log(configService.get('AWS_S3_BUCKET_NAME'), "aws key")
         AWS.config.update({
             accessKeyId: configService.get('AWS_ACCESS_KEY_ID'),
             secretAccessKey: configService.get('AWS_SECRET_ACCESS_KEY')
         });
-        console.log(AWS.config.secretAccessKey, configService.get('AWS_SECRET_ACCESS_KEY'))
         this. upload = multer({
             storage: multerS3({
                 s3: s3,

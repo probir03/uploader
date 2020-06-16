@@ -1,0 +1,3 @@
+p, admin, /*, GET
+p, notadmin, /, POST
+p, admin, /v1/uploads, POST

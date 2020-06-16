@@ -12,7 +12,6 @@ export class ConfigService {
   private readonly envConfig: EnvConfig;
 
   constructor(@Inject(CONFIG_OPTIONS) options: ConfigOptions) {
-    console.log("Config service constructor called");
     const filePath = `.env`;
     const envFile = path.resolve(__dirname, '../../', options.folder, filePath);
     this.envConfig = dotenv.parse(fs.readFileSync(envFile));
